@@ -1,0 +1,42 @@
+Scalar
+
+Instalation instructions
+
+To run the game in fullscreen run it with: scalar -f
+
+
+If you downloaded the Windows binary (zip file),
+just unpack to some directory and run scalar executable.
+
+If you downloaded the Linux binary (tar.gz file), unpack to some
+directory and run ./scalar.
+You may have to check which version on SDL library you have and,
+if the game doesn't work, download the latest version.
+This version of Scalar is compiled against SDL version 1.2.5.
+
+If you downloaded the source code, you must have the development versions of
+the following libraries installed:
+SDL
+SDL_image
+SDL_mixer (optional)
+
+If you don't, you can get it at:
+http://www.libsdl.org
+
+When ready, unpack the source to any folder, and run:
+make
+
+It uses sdl-config for configuration options, so you shouldn't have any
+problems. This makefile uses g++ on GNU/Linux and Cygwin.
+
+File makefile.b32 is makefile for Borland's Free C++ Compiler (BCC). Follow the
+instructions on www.libsdl.org website to create development environment
+for BCC, edit the makefile to fit your paths and run:
+make -f makefile.b32
+
+Other compilers aren't supported, but feel free to try: just compile all
+.cpp files and link. If your system is supported by SDL library,
+it should work. So far it is known to also work on FreeBSD and OpenBSD.
+
+If you have any questions, contact me at: mbabuskov@yahoo.com
+

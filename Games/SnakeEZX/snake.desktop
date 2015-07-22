@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Snake
+Version=1.1
+Description=SnakeEZX 1.1 [Port: 08.10.2010]
+Comment=SnakeEZX is a classic snake game created by Schaun using SDL and C++
+Vendor=www.motorolafans.com
+Exec=run
+BigIcon=ibig.png
+Icon=ismall.png
+Type=Application
+Category=Games
+Shared=2

@@ -1,0 +1,25 @@
+
+void DownMan::About()
+{
+	AboutWind = new UTIL_Dialog(UTIL_Dialog::DTLargeSize,true,this,"About",1,0);
+	AboutWind->setHasTitle(true);
+	AboutWind->setDlgTitle(QString("<p align=\"center\">")+tr("About")+QString("</p>"));
+
+	QLabel* lbl = new QLabel(AboutWind);
+	lbl->setText(
+		QString("<p align=\"center\">")+
+		QString(APP_NAME)+QString(" ")+QString(APP_VERSION)+
+		QString("<br>")+QString(APP_DATE)+
+		QString("<br><br>Developed for EZX<br>by BruceLee<br>www.MotorolaFans.com</p>"));
+	AboutWind->setDlgContent(lbl);
+	
+	QHBox *hb = new QHBox(AboutWind);
+	AboutWind->setDlgCst(hb);
+	ZPushButton *closeBtn = new ZPushButton(hb,0,-1,-1);
+	closeBtn->setText(tr("Close"));	
+	connect(closeBtn, SIGNAL(clicked()),SLOT(AboutClose()));
+	AboutWind->show();
+}
+
+void DownMan::AboutClose() { delete AboutWind; }
+

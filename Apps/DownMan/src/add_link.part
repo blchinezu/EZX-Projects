@@ -1,0 +1,138 @@
+
+void DownMan::Add_Link()
+	{ Add_Link(""); }
+
+void DownMan::Add_Link(QString link)
+	{ Add_Link(link, PATH_MMC, ""); }
+
+void DownMan::Add_Link(QString lpath, QString dpath, QString fname)
+{
+	int x=5, y=5;
+
+	// Try to get filename from link
+	if(fname == "" && lpath != "")
+		fname = FilenameFromLink(lpath);
+
+	// Create window
+	Add_LinkWind = new UTIL_Dialog(UTIL_Dialog::DTLargeSize,true,this,"Add Link",1,0);
+	Add_LinkWind->setHasTitle(true);
+	Add_LinkWind->setDlgTitle(QString("<center>")+tr("Add Download Link")+QString("</center>"));
+
+	QWidget* w=new QWidget(Add_LinkWind);
+	QBoxLayout *vb = new QBoxLayout(Add_LinkWind,QBoxLayout::TopToBottom);
+	vb->setAutoAdd(true);
+	Add_LinkWind->setDlgContent(w);
+	
+	ZScrollView* sv=new ZScrollView(Add_LinkWind);
+	sv->enableClipper(true);
+
+	// Link
+	QLabel *lblLink = new QLabel( tr("Link"),sv->viewport(), "name label");
+	lblLink->resize(150,25);
+	sv->addChild(lblLink, x, y);
+	y += 25;
+	Link=new  ZMultiLineEdit( sv->viewport(),true,1, "file name" );
+	Link->setFilter(QRegExp(FILTER_LINK));
+	Link->resize(200,25);
+	sv->addChild(Link,x,y);
+	
+//	// File Name
+//	y += 30;
+//	QLabel *lblFName = new QLabel( tr("File Name"),sv->viewport(), "name");
+//	lblFName->resize(150,25);
+//	sv->addChild(lblFName,x,y);
+//	y += 25;
+//	FileName=new ZMultiLineEdit( sv->viewport(),true,1, "save name" );
+//	FileName->setFilter(QRegExp(FILTER_FILE));
+//	FileName->resize(200,25);
+//	sv->addChild(FileName,x,y);
+	
+	// Download path
+	y += 30;
+	QLabel *lblSaveTo = new QLabel( tr("Save to"),sv->viewport(), "dir");
+	lblSaveTo->resize(150,25);
+	sv->addChild(lblSaveTo,x,y);
+
+	ZPushButton *btnBrowse = new ZPushButton("FMMS_FolderTree",sv->viewport());
+	btnBrowse->resize(24, 24);
+	sv->addChild(btnBrowse, 180, y);
+	QObject::connect( btnBrowse, SIGNAL(clicked()), this, SLOT(Add_LinkSelLoc()) );
+
+	y += 25;
+	DownPath=new ZMultiLineEdit( sv->viewport(),true,1, "save dir" );
+	DownPath->setFilter(QRegExp(FILTER_DIR));
+	DownPath->resize(200,25);
+	sv->addChild(DownPath,x,y);
+	
+	// Bottom CST buttons
+	QHBox *hb = new QHBox(Add_LinkWind);
+	Add_LinkWind->setDlgCst(hb);
+	// Left
+	ZPushButton *toggleBtn = new ZPushButton(hb,0,-1,-1);
+	toggleBtn->setText(tr("Download"));	
+	connect(toggleBtn, SIGNAL(clicked()),SLOT(Add_LinkOK()));
+	// Right
+	ZPushButton *closeBtn = new ZPushButton(hb,0,-1,-1);
+	closeBtn->setText(tr("Close"));	
+	connect(closeBtn, SIGNAL(clicked()),SLOT(Add_LinkClose()));
+	
+	// Show window
+	Add_LinkWind->show();
+	
+	// Set entry values (not setted when adding objects because of graphical glitches)
+	Link->setText(lpath);
+	DownPath->setText(QString(dpath)+QString("/")+QString(fname));
+}
+
+void DownMan::Add_LinkClose() { delete Add_LinkWind; }
+
+void DownMan::Add_LinkOK() {
+	QString link = Link->text();
+	if(link.isNull() || link.isEmpty()) {
+		ZMessageBox::information(this,ICON_ERROR,tr("You must enter a link."),tr("OK"));
+		return;
+	}
+	QString loc = DownPath->text();
+	QString dir = SplitStrLastRest(loc, "/");
+	QString file = SplitStrLast(loc, "/");
+	if(loc.isNull() || loc.isEmpty()) {
+		ZMessageBox::information(this,ICON_ERROR,tr("You must specify the download path."),tr("OK"));
+		return;
+	}
+	if(dir.isNull() || dir.isEmpty()) {
+		ZMessageBox::information(this,ICON_ERROR,tr("You must specify the download directory."),tr("OK"));
+		return;
+	}
+	
+	char tt[strlen((const char*)loc)];
+	sprintf(tt, "%s", (const char*)loc);
+	if ( tt[strlen(tt)-1] == '/' ) {
+		ZMessageBox::information(this,ICON_ERROR,tr("You must enter a file name."),tr("OK"));
+		return;
+	}
+	
+	printf("Added new download:\n > Link\t= %s\n > Dir\t= %s\n > Name\t= %s\n", (const char *)link, (const char *)dir, (const char *)file);
+
+	// FIXME: Make the shit functional
+	// TODO:  Make the downloader
+	// XXX:   Maybe make wget a lib
+/*	system(QString(
+		QDir::currentDirPath())+QString("/")+QString(DOWNLOADER)+
+		QString(" --new ")+
+		QString(" '")+QString(link)+QString("'")+
+		QString(" '")+QString(dir)+QString("'")+
+		QString(" '")+QString(file)+QString("'")+
+		QString(" '")+QString(PATH_CONF)+QString("'")+
+		QString(" &")
+		);*/
+	// TODO: If link is ftp get user and password
+	Add_LinkClose();
+}
+
+void DownMan::Add_LinkSelLoc()
+{
+	QString dr = FileDlg::saveTo(this, DownPath->text());
+	if (dr != QString(""))
+		DownPath->setText(dr);
+}
+

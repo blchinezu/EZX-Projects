@@ -1,0 +1,21 @@
+TODO for Mad Bomber
+
+by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com
+
+March 16, 2003
+
+WISH LIST
+---------
+  * Create Windows ".ico" versions of the icons in the "icons/" directory.
+
+  * Joystick support.
+
+  * Paddle support (simply a variation of joystick support)
+
+  * Use a platform-independant settings-file library, so that Mad Bomber for
+    Windows uses real Windows ".ini" files, and Mad Bomber for BeOS uses
+    whatever BeOS uses.  (Ditto for Mac, when the SDL Mac port is finished.)
+
+    (Is ANYONE going to write a ***-****ed library for this!?!?!)

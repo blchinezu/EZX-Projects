@@ -1,0 +1,70 @@
+TEMPLATE	= app
+CONFIG		= qt warn_on release
+HEADERS		= app.h \
+		  audio.h \
+		  button.h \
+		  constants.h \
+		  error.h \
+		  fontttf.h \
+		  framerate.h \
+		  game.h \
+		  gamedata.h \
+		  global.h \
+		  image.h \
+		  imageanim.h \
+		  input.h \
+		  platform.h \
+		  play.h \
+		  playdiff.h \
+		  playgame.h \
+		  playgamepopup.h \
+		  playhigh.h \
+		  playinst.h \
+		  playmainmenu.h \
+		  playmenu.h \
+		  playmodemenu.h \
+		  random.h \
+		  roundels.h \
+		  score.h \
+		  screen.h \
+		  singleton.h \
+		  sprite.h \
+		  spritemgr.h \
+		  states.h \
+		  surface.h \
+		  utils.h \
+		  waiting.h \
+		  words.h
+SOURCES		= app.cpp \
+		  audio.cpp \
+		  button.cpp \
+		  error.cpp \
+		  fontttf.cpp \
+		  framerate.cpp \
+		  game.cpp \
+		  gamedata.cpp \
+		  image.cpp \
+		  imageanim.cpp \
+		  input.cpp \
+		  play.cpp \
+		  playdiff.cpp \
+		  playgame.cpp \
+		  playgamepopup.cpp \
+		  playhigh.cpp \
+		  playinst.cpp \
+		  playmainmenu.cpp \
+		  playmenu.cpp \
+		  playmodemenu.cpp \
+		  random.cpp \
+		  reword.cpp \
+		  roundels.cpp \
+		  score.cpp \
+		  screen.cpp \
+		  singleton.cpp \
+		  sprite.cpp \
+		  spritemgr.cpp \
+		  surface.cpp \
+		  utils.cpp \
+		  waiting.cpp \
+		  words.cpp
+INTERFACES	= 

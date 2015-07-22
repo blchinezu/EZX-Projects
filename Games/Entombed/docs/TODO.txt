@@ -1,0 +1,10 @@
+TODO.txt for Entombed!
+
+by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/entombed/
+
+January 17, 2005
+
+* Set speed limit for higher levels!
+* Show results after game (on title screen).

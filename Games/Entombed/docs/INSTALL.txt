@@ -1,0 +1,76 @@
+INSTALL.txt for Entombed!
+
+by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/entombed/
+
+May 22, 2002 - July 4, 2007
+
+Requirements:
+-------------
+  libSDL
+    http://www.libsdl.org/
+    
+  SDL_Mixer
+    http://www.libsdl.org/projects/SDL_mixer/
+
+  SDL_Image
+    http://www.libsdl.org/projects/SDL_image/
+
+
+  Note: To compile Entombed from source, if you installed the aforementioned
+  libraries from a package (e.g., "SDL_image-1.2.4-1.i386.rpm"), you'll need
+  the corresponding development packages, as well!
+  (e.g., "SDL_image-devel-1.2.4-1.i386.rpm")
+
+
+Compile:
+--------
+  Simply run:
+
+    $ make
+
+  at a shell prompt.
+
+
+  To build the 320x240 version (versus 640x480), run:
+
+    $ make halfsize
+
+
+
+Install:
+--------
+  Simply run (as root superuser, to install in the default system-wide
+  location:
+
+    # make install
+
+  or:
+
+    # make install_halfsize
+
+  This will place the "entombed" binary in /usr/local/bin/, and
+  the data files used by Entombed! in /usr/share/entombed/
+
+  Now you're ready to run Entombed!  Just type:
+
+    $ entombed &
+
+  at a shell prompt!
+
+
+Compile-time options:
+---------------------
+  Some options may be set during compliation.  See "Makefile" for the
+  various variables you can change.
+  
+  You can also compile Entombed! with sound support completely disabled
+  by building the "nosound" target:
+  
+    $ make nosound
+
+  This removes the requirement that the "SDL_Mixer" library be installed
+  and available.  (This can be useful if you have an old PC you want to
+  play on, but it doesn't have a sound card.)
+

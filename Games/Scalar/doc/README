@@ -1,0 +1,59 @@
+Scalar
+
+Scalar is a simple puzzle game written in C++ using SDL library
+
+For installation instructions, read file INSTALL
+
+If you have any questions, or you wish to help the development, contact me at:
+mbabuskov@yahoo.com
+
+
+The goal of the game is to assemble the picture from pieces.
+Each picture is divided into pieces which are shuffled. You need to get each
+piece back to its original position. You accomplish that by swapping pieces
+(exchanging their positions). You have a limited number of
+swappings for each picture.
+
+When you complete the picture, you advance to the next level.
+If you have a hard time playing this, you can look at the images directory
+and see what the final picture looks like.
+
+Feel free to add more pictures to images directory and play with them
+(images can be in .jpg, .gif, .png, .bmp, any many other formats).
+
+Have fun ;)
+
+
+
+Licencing information:
+
+Source code of Scalar is covered by GNU GPL licence. See file COPYING for details.
+
+Music that plays in the game is NOT under GPL licence. It is copyrighted by Peter
+Salomonsen and you will have to contact him.
+
+Font used in game is named Unispace and is made by Ray Larabie. The font is freeware.
+
+Njam uses SDL, SDL_mixer and SDL_image libraries.
+
+The Simple DirectMedia Layer (SDL for short) is a cross-platfrom library
+designed to make it easy to write multi-media software, such as games and
+emulators.
+
+The Simple DirectMedia Layer library source code is available from:
+http://www.libsdl.org/
+
+The source of SDL_mixer is available from the libraries page at the SDL website:
+http://www.libsdl.org/
+
+All these libraries are distributed under the terms of the GNU LGPL license:
+http://www.gnu.org/copyleft/lesser.html
+
+SDL_image library includes the following libraries:
+
+JPEG library: http://www.ijg.org/
+PNG  library: http://www.libpng.org/pub/png/libpng.html
+Zlib library: http://www.gzip.org/zlib/
+
+Licencing information can be obtained at these websites.
+

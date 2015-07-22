@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Variables
+bin_name="DownMan"			# The resulting binary name
+here="/home/a1200/DownMan/"	# Where this file is located
+
+# Go here
+	cd "$here"
+# Fix date issues caused by my system
+	if [ "`echo $@|grep -i 'fix'`" != "" ]; then touch src/*; fi
+# Load environment
+. /opt/toolchains/motoezx/setenv-a1200.sh ezx
+# Clear screen
+	$clear
+# Make wget library
+	if [ "`echo $@|grep -i 'wget'`" != "" ]; then
+		rm libwget.so
+		cd ../wget
+		make
+		cd "$here"
+	fi
+# Clean folder
+	make clean; rm -f Makefile $bin_name.pro $bin_name
+# Make build files
+	mmake $bin_name
+# Build
+	make bin
+# Clean build files. Leave only binary
+	make almostclean; rm Makefile $bin_name.pro;
+

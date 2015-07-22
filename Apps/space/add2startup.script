@@ -1,0 +1,19 @@
+
+
+
+# SPACE NOTIFIER STARTUP SCRIPT
+if [ "$(id -u)" != "0" -a -z "$1" ]
+then
+  exec /sbin/start-stop-daemon -S -c root:root -x "$0" -- restart
+  exit 1
+fi
+
+. /home/native/.profile 2>/dev/null 1>/dev/null
+
+sleep 25
+
+cp -f /mmc/mmca1/.system/QTDownLoad/space/startup.sh /ram/var/run/spcstartup.sh
+sh /ram/var/run/spcstartup.sh &
+# SPACE NOTIFIER STARTUP SCRIPT
+
+

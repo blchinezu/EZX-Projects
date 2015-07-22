@@ -1,0 +1,41 @@
+ SNAKE 1.1 [Ported by BruceLee @ motorolafans.com]
+=============
+
+ Introducción
+--------------
+
+Snake es una versión del clásico juego de la serpiente para la GP2X.
+
+Está liberado bajo licencia GPL por lo que puedes distribuirlo y modificarlo como quieras siempre y cuando el código fuente esté disponible.
+
+ Novedades
+---------------
+
+- Ahora hay un menu principal
+
+- Soporte para múltiples idiomas. Por ahora, inglés y español
+
+- Movimiento con el stick mejorado, sin zonas muertas. Gracias a MKL
+
+- También se puede mover con los botones A,B,X e Y como si fuera el stick.
+
+
+ Instrucciones
+--------------
+
+Tu objetivo es comerte toda la fruta que hay repartida por la pantalla, evitando chocar con los obstáculos y con tu propia cola. 
+
+Puedes cambiar la dirección de la serpiente con el stick, aunque ésta nunca deja de avanzar.
+
+Cuando no quede comida en la pantalla pasarás al siguiente nivel. 
+
+Por cada 50 puntos obtendrás una vida extra.
+
+ Contacto
+----------
+
+Estoy preparando una página web con todos mis proyectos, aunque aún no está disponible.
+
+Mientras tanto me puedes encontrar en el foro gp32spain.com bajo el nick "schan" o en  el siguiente email:schan[PUNTO]schan[ARROBA]gmail[PUNTO]com
+
+Cualquier comentario, crítica o sugerencia será bienvenida.

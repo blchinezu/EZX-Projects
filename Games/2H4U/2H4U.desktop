@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=2H4U
+Version=1.0
+Comment=Release: 07.11.2010
+Vendor=Lubomyr & BruceLee
+Exec=run
+BigIcon=ibig.png
+Icon=ismall.png
+Type=Application
+Category=Games
+Shared=2

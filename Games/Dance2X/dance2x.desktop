@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Dance2X
+Version=0.1a
+Comment=Port: 10.11.2010
+Vendor=BruceLee
+Exec=run
+BigIcon=ibig.png
+Icon=ismall.png
+Type=Application
+Category=Games
+Shared=2

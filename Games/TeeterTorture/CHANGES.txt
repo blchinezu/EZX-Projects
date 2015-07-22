@@ -1,0 +1,4 @@
+* Added title, instructions and high score screens
+* High scores stored in ~/.teetertorturerc
+* Added remaining level background colors
+

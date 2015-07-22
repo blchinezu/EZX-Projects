@@ -1,0 +1,18 @@
+
+void DownMan::Downloads()
+{
+	if (CurrentState != DOWNLOADS) {
+		QString ttl = tr("Downloads");
+		int total_downloads = 0;
+		CSTMidLeft->setText(tr("Opt1"));
+	//	connect( CSTMidLeft, SIGNAL( clicked() ), this, SLOT( About() ) );
+		CSTMidRight->setText(tr("Opt2"));
+	//	connect( CSTMidRight, SIGNAL( clicked() ), this, SLOT( Downloads() ) );
+
+		char cc[5]; sprintf(cc, "%d", total_downloads);
+		title->setText(ttl+QString(" [")+QString(cc)+QString("]"));
+		printf("Downloads\n");
+		CurrentState = DOWNLOADS;
+	}
+}
+

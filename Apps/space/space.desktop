@@ -1,0 +1,10 @@
+[Desktop Entry]
+BigIcon=big.png
+Comment=Space Monitor
+Exec=space.sh
+Icon=small.png
+Name=Space Monitor
+Version=1.0b
+OsVersion=1.1
+Shared=2
+Type=Application

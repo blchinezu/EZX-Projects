@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dir='/home/brucelee/Desktop/sdl-soft-keyboard'; cd $dir
+
+nautilus "$dir" &
+
+gedit src/0_main.cpp src/main.h src/app/0_Init.cpp src/app/1_Event.cpp src/app/2_Loop.cpp src/app/3_Render.cpp src/app/4_Cleanup.cpp src/app/Functions.cpp src/engine/config.cpp src/engine/config.h src/engine/engine.cpp src/engine/engine.h src/engine/graphics.cpp src/engine/graphics.h src/engine/mouse.cpp src/engine/mouse.h src/engine/timer.cpp src/engine/timer.h src/soft-keyboard.cpp src/soft-keyboard.h &
+
+gnome-terminal --maximize --working-directory=$dir --tab --title="BUILD" --tab --title="TEST PC" --tab --title="UPDATE" --tab --title="TELNET" --tab --title="SMB" &
+

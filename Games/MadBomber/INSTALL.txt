@@ -1,0 +1,178 @@
+INSTALL for Mad Bomber
+
+by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/madbomber/
+
+February 24, 2002
+
+
+REQUIREMENTS
+------------
+  SDL
+  ---
+    "Mad Bomber" was programed using the "Simple Direct Media" layer
+    libraries by Sam Lantinga.  This means that the game can
+    theoretically run under any environment that the SDL libraries support.
+
+    You can download the SDL libraries from:
+      http://www.libsdl.org/
+
+  SDL_Image
+  ---------
+    You will need the "SDL_Image" library compiled and installed.
+
+    The SDL_Image library can be downloaded from:
+      http://www.libsdl.org/projects/SDL_image/
+
+  SDL_Mixer
+  ---------
+    Sound and music are available, but are not required (see below).
+    You will need the "SDL_Mixer" library compiled and installed.
+
+    The SDL_Mixer library can be downloaded from:
+      http://www.libsdl.org/projects/SDL_mixer/
+
+  Controls
+  --------
+    The game can be played with a keyboard and/or a mouse.
+
+    Eventually, I hope to support Atari 2600 paddles (which would
+    simply be an variation of analog PC joystick support).
+
+
+COMPILING UNDER LINUX/UNIX
+--------------------------
+  -----------------------------------------------------------------
+  Note: Read this entire section before you start issuing commands!
+  -----------------------------------------------------------------
+
+  The "Makefile" that comes with "Mad Bomber" assumes a number
+  of defaults about your system.  You can edit their values in
+  the "Makefile" itself, or specify their values when you run
+  the "make" command (ie, "make VARIABLE=value").
+
+  The things you will wish to edit are:
+
+    DATA_PREFIX=/usr/share/madbomber/
+
+      This defines where the contents of "Mad Bomber"'s "data/" directory
+      is to be found.  The default assumes that you're going to install
+      Mad Bomber globally.
+
+      If you wish to install Mad Bomber elsewhere (say, in a user home
+      directory because you don't have root access on the system),
+      change this.  For example, if you just want to leave the data
+      where it is, try:
+
+        DATA_PREFIX=$(PWD)/data
+
+    BIN_PREFIX=/usr/local/bin/
+
+      This defines where the "install" target of the Makefile (see below)
+      is to place the program.  If you don't plan on running "make install",
+      you don't need to worry about this value.
+
+
+  To compile the game, type the command:
+
+    make           [ with whatever variable changes you want, if any ]
+
+  If you decided that you wanted the data somewhere else, make sure
+  to move it there.  If you wanted it to be accessible to others
+  (ie, you're an administrator installing a new game for your users),
+  make sure to set the permissions for the files!  (You'll also want
+  to move the "madbomber" binary to somewhere globally accessible,
+  and set its permissions, as well, of course!)
+
+  Note: If you do not have the SDL mixer library, or wish to not
+  compile sound support into the game, you can compile it like this:
+
+    make nosound   [ with whatever variable changes you want, if any ]
+
+  To install the software (copy the data files to the location specified
+  by "DATA_PREFIX" and copy the program itself to the location specified
+  by "BIN_PREFIX", and set permissions), run:
+
+    make install
+
+  (You may need to do this as superuser ("root")).
+
+
+  If you wish to return the directory to its distribution state,
+  (remove the ".o" object files, and the "madbomber" executable program
+  file), you can run:
+
+    make clean
+
+
+COMPILING FOR WINDOWS USING A CROSS-COMPILER UNDER LINUX/UNIX
+-------------------------------------------------------------
+  -----------------------------------------------------------------
+  Note: Read this entire section before you start issuing commands!
+  -----------------------------------------------------------------
+
+  Once you are set up to cross-compile (for example, you've installed
+  the Xmingw32 cross compiler and set your $PATH variable correctly),
+  to compile the game, type the command:
+
+    make win32
+
+  This will re-run the "make" command, sending it some values which
+  will replace the Linux-specific defaults in "Makefile".  The resulting
+  program will be called "madbomber.exe".
+
+  The values which are altered when you make the "win32" target are:
+
+    TARGET_LIBS=
+      This removes the "-lpthreads" and "-ldl" libraries used under Linux.
+
+    TARGET_DEF=WIN32
+      This causes a "WIN32" definition to be sent to the C compiler, which
+      changes the source slightly to cross-compile for Windows.
+
+    SDL_PREFIX=/usr/win32/
+      Depending on where the Win32 version of the SDL libraries are installed
+      on your system, you may need to edit "Makefile" and change the
+      "SDL_PREFIX" that gets sent in the "win32" make target.      
+
+    TARGET=madbomber.exe
+      Since Win32 programs are named ".exe", this changes the target filename
+      so that such a file is created.
+
+    DATA_PREFIX=
+      Since the Linux/Unix directory structure won't make sense on a Win32
+      box, the DATA_PREFIX is stripped.  This means "madbomber.exe" must be
+      run inside the directory containing it's "data/" subdirectory.
+
+  If you wish to return the directory to its distribution state,
+  (remove the ".o" object files, and the "madbomber.exe" executable program
+  file), you can run:
+
+    make clean
+
+
+COMPILING THE EMBEDDED VERSION
+------------------------------
+  The embedded version uses a C '#define' called "EMBEDDED" to compile
+  the game using sideways, quarter-sized graphics and mouse (stylus) input,
+  and sideways keyboard control.
+
+  Other differences currently include:
+  
+    * No sound (and, therefore, no sound settings or music)
+    * No "Two Player Vs" mode
+    * The zooming level number effect is removed (for CPU speed consideration)
+
+  To build the embedded version, simply run:
+
+    make embedded
+
+
+  (Once SDL and SDL_image are ported to Zaurus and/or iPAQ-running-Linux,
+  I'll add cross-compiling options to the Makefile.  For now, you're on your
+  own!)
+
+
+
+That's it!

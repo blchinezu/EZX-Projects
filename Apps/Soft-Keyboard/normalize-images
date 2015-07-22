@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd '/home/brucelee/Desktop/sdl-soft-keyboard/data'
+for each in `ls *.bmp`; do width=`identify -format '%w' $each`; mogrify -resize $width $each; done
+for each in `ls *.png`; do width=`identify -format '%w' $each`; mogrify -resize $width $each; done
+
+cd '/home/brucelee/Desktop/sdl-soft-keyboard/data/sk'
+for each in `ls *.bmp`; do width=`identify -format '%w' $each`; mogrify -resize $width $each; done
+for each in `ls *.png`; do width=`identify -format '%w' $each`; mogrify -resize $width $each; done

@@ -1,0 +1,26 @@
+--------------------------------------------------
+| A1200/E6 |  N  |  sdl name   | mod N | mod sdl |
+--------------------------------------------------
+| Call     | 32  | SDLK_SPACE  |  102  | SDLK_f  |
+| Hangup   | 27  | SDLK_ESCAPE |  97   | SDLK_a  |
+| Camera   | 19  | SDLK_PAUSE  |  101  | SDLK_e  |
+| Vol '+'  | 43  | SDLK_PLUS   |  99   | SDLK_c  |
+| Vol '-'  | 45  | SDLK_MINUS  |  100  | SDLK_d  |
+| Fire     | 13  | SDLK_RETURN |  98   | SDLK_b  |
+| Up       | 275 | SDLK_RIGHT  |  106  | SDLK_j  |
+| Down     | 276 | SDLK_LEFT   |  105  | SDLK_i  |
+| Right    | 274 | SDLK_DOWN   |  104  | SDLK_h  |
+| Left     | 273 | SDLK_UP     |  103  | SDLK_g  |
+--------------------------------------------------
+     A1200 mod key - key between vol+ & vol-
+
+
+--------------------------------------------------
+| ROKR E6  |  N  |  sdl name   | mod N | mod sdl |
+--------------------------------------------------
+| Back     | 111 | SDLK_o      |  107  | SDLK_k  |
+| Pause    | 112 | SDLK_p      |  108  | SDLK_l  |
+| Forward  | 113 | SDLK_q      |  109  | SDLK_m  |
+| un.Call  | 114 | SDLK_r      |  110  | SDLK_n  |
+--------------------------------------------------
+      ROKR E6 mod key - key und.Hangup

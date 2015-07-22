@@ -1,0 +1,3 @@
+AR := arm-linux-gnueabi-ar
+CXX := arm-linux-gnueabi-g++
+CFLAGS := $(CFLAGS) -DWITH_KEYMAPPING -DWITHOUT_MOUSE -DWITH_MIXER

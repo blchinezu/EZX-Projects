@@ -1,0 +1,47 @@
+
+void DownMan::Daemon()
+{
+	bool	runs = false;
+	QString	stat = tr("STOPPED");
+	QString ttl  = tr("Daemon Status");
+	if (FileExists(DAEMON_FLAG)) {
+		runs = true;
+		stat = tr("RUNNING");
+	}
+	
+	DaemonWind = new UTIL_Dialog(UTIL_Dialog::DTSmallSize,true,this,ttl,1,0);
+	DaemonWind->setHasTitle(true);
+	DaemonWind->setDlgTitle(QString("<p align=\"center\">")+ttl+QString("</p>")); // FIXME: Add tr
+
+	QLabel* lbl = new QLabel(DaemonWind);
+	lbl->setText(
+		QString("<p align=\"center\">")+stat+QString("</p>"));
+	DaemonWind->setDlgContent(lbl);
+	
+	QHBox *hb = new QHBox(DaemonWind);
+	DaemonWind->setDlgCst(hb);
+	ZPushButton *toggleBtn = new ZPushButton(hb,0,-1,-1);
+	if (runs) {
+		toggleBtn->setText(tr("Stop"));	
+		connect(toggleBtn, SIGNAL(clicked()),SLOT(DaemonStop()));
+	} else {
+		toggleBtn->setText(tr("Start"));	
+		connect(toggleBtn, SIGNAL(clicked()),SLOT(DaemonStart()));
+	}
+	ZPushButton *closeBtn = new ZPushButton(hb,0,-1,-1);
+	closeBtn->setText(tr("Close"));	
+	connect(closeBtn, SIGNAL(clicked()),SLOT(DaemonClose()));
+	DaemonWind->show();
+}
+
+void DownMan::DaemonClose() { delete DaemonWind; }
+
+void DownMan::DaemonStart() {
+	system(QString(QDir::currentDirPath())+QString("/")+QString(DAEMON_FILE)+QString(" &"));
+	DaemonClose();
+}
+
+void DownMan::DaemonStop() {
+	system(QString(QDir::currentDirPath())+QString("/")+QString(DAEMON_FILE)+QString(" --kill &"));
+	DaemonClose();
+}

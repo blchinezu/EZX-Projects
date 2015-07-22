@@ -1,0 +1,49 @@
+AUTHORS.txt for Entombed!
+
+by Bill Kendrick
+bill@newbreedsoftware.com
+http://www.newbreedsoftware.com/
+
+
+Programming
+  Bill Kendrick <bill@newbreedsoftware.com>
+  (c) 2002-2007 New Breed Software
+  http://www.newbreedsoftware.com/
+
+
+Title Graphics
+  Bill Kendrick <bill@newbreedsoftware.com>
+  Rendered using POVRay
+  http://www.povray.org/
+
+
+Sound Effects
+  Miscellaneous sound archives on the Internet.
+
+
+Music
+  Grabbed from MOD archives on the Internet.
+
+  Title Music - "Amaze" by DEAf, (c) 1997
+  Game Music  - "Suggestive Vibes 01" by Mortimer Twang, (c) 2001.
+
+
+Original Concept
+  "Entombed" for the Atari 2600 video game system
+  Author unknown.
+  (c) 1982 U.S. Games Corporation
+  (a subsidiary of the Quaker Oats Corporation)
+
+
+Special Thanks
+  Jeff Coleburn <vsp@netaxs.com> for providing a text version of
+  the original Atari 2600 "Entombed"'s manual.
+
+  The "AtariAge" website, for hosting screenshots and the manual for
+  the original "Entombed," as well as many, many other games for
+  various Atari systems.
+  http://www.atariage.com/
+
+  Sam Lantinga for the excellent Simple DirectMedia Layer library (libSDL).
+  http://www.libsdl.org/
+

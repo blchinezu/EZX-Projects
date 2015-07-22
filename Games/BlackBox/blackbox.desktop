@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Black-Box
+Version=0.4.8
+Comment=Port: 11.11.2010
+Vendor=BruceLee
+Exec=run
+BigIcon=ibig.png
+Icon=ismall.png
+Type=Application
+Category=Games
+Shared=2

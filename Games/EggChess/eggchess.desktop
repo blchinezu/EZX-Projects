@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Egg Chess
+Version=1.1
+Comment=Port: 11.11.2010
+Vendor=BruceLee
+Exec=run
+BigIcon=ibig.png
+Icon=ismall.png
+Type=Application
+Category=Games
+Shared=2
