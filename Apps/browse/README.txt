@@ -24,4 +24,10 @@ SYNTAX:
 	
 DEFAULTS:
 	If there is no argument it assumes "-f" with the root directory "/".
-	
+
+
+### Screenshots:
+
+![20111122145543.jpg](https://github.com/blchinezu/EZX-Projects/blob/master/Apps/browse/screens/20111122145543.png?raw=true)
+![20111122145623.jpg](https://github.com/blchinezu/EZX-Projects/blob/master/Apps/browse/screens/20111122145623.png?raw=true)
+![20111122145711.jpg](https://github.com/blchinezu/EZX-Projects/blob/master/Apps/browse/screens/20111122145711.png?raw=true)
